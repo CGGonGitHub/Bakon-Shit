@@ -16,12 +16,14 @@ for i, v in ipairs(Currentmap:GetDescendants()) do
             y.Size = UDim2.new(1,0,1,0)
             if workspace.CurrentMap:FindFirstChildWhichIsA('Folder').Name == 'Chapter4' and v.Name == 'Textbook' then
                 y.BackgroundColor3 = v['Blue Book'].Color
-            elseif workspace.CurrentMap:FindFirstChildWhichIsA('Folder').Name == 'Chapter7' and v.Name == 'ID Card' then
+            elseif v.Name == 'ID Card' then
                 y.BackgroundColor3 = v['security access card'].Color
-            elseif workspace.CurrentMap:FindFirstChildWhichIsA('Folder').Name == 'Chapter6' and v.Name == 'Battery' then
+            elseif v.Name == 'Battery' then
                 y.BackgroundColor3 = v['battery'].Color
-            elseif workspace.CurrentMap:FindFirstChildWhichIsA('Folder').Name == 'Chapter6' and v.Name == 'Power Button' then
+            elseif v.Name == 'Power Button' then
                 y.BackgroundColor3 = v['button for garage'].Color
+            elseif v.Name == 'Ax' then
+                y.BackgroundColor3 = v['Axe'].Color
             else
                 y.BackgroundColor3 = v[v.Name].Color
             end
@@ -55,6 +57,7 @@ for i, v in ipairs(Currentmap:GetDescendants()) do
             DoorHighlight.OutlineColor = v.PadLock.Color
             DoorHighlight.FillColor = v.PadLock.Color
             DoorHighlight.FillTransparency = 0.5
+            DoorHighlight.Parent = v
         end
     end
 end
