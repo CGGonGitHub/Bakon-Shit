@@ -1,10 +1,11 @@
-local bakon = nil
-
-
 -- Item ESP
 
-local Currentmap = workspace:FindFirstChild('CurrentMap')
-for i, v in ipairs(Currentmap:GetDescendants()) do
+local CurrentMap = workspace:FindFirstChild('CurrentMap')
+if CurrentMap:FindFirstChildWhichIsA('Folder').Name == 'Chapter1' and CurrentMap:FindFirstChildWhichIsA('Folder'):FindFirstChild('KillParts') then
+    CurrentMap:FindFirstChildWhichIsA('Folder'):FindFirstChild('KillParts'):Destroy()
+end
+
+for i, v in ipairs(CurrentMap:GetDescendants()) do
     if v.Name == 'Utilities' then
         local Utilities = v
         for i, v in ipairs(Utilities:GetChildren()) do
@@ -24,6 +25,8 @@ for i, v in ipairs(Currentmap:GetDescendants()) do
                 y.BackgroundColor3 = v['button for garage'].Color
             elseif v.Name == 'Ax' then
                 y.BackgroundColor3 = v['Axe'].Color
+            elseif v.Name == 'Ladder' then
+                y.BackgroundColor3 = v['Ladder'].Part.Color
             else
                 y.BackgroundColor3 = v[v.Name].Color
             end
@@ -61,5 +64,3 @@ for i, v in ipairs(Currentmap:GetDescendants()) do
         end
     end
 end
-            
-            
